@@ -1,0 +1,23 @@
+Script 1:
+
+#! /bin/bash
+for i in {1..30}
+do
+  echo "$i" > "$i.txt"
+done
+echo "30 text files created succesfully"
+
+---
+Script 2:
+
+#!/bin/bash
+DESTINATION_FOLDER="/opt/folder/"
+if [ ! -d "$DESTINATION_FOLDER" ]; then
+  mkdir "$DESTINATION_FOLDER"
+fi
+for i in {1..30}
+do
+  mv "$i.txt" "$DESTINATION_FOLDER"
+done
+
+echo "30 text files moved to the '$DESTINATION_FOLDER' folder successfully."
