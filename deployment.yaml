@@ -17,19 +17,6 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
-        env:
-        - name: nginx-html
-          valueFrom:
-            configMapRef:
-               name: nginx-html
----
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: nginx-html
-data:
-  index.html: |
-    Hi mysqlf Surya
 ---
 apiVersion: v1
 kind: Service
