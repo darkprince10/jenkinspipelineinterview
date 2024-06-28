@@ -17,8 +17,11 @@ spec:
         image: nginx:latest
         ports:
         - containerPort: 80
-        configMap:
-          name: nginx-html
+        env:
+        - name: nginx-html
+          valueFrom:
+            configMapRef:
+               name: nginx-html
 ---
 apiVersion: v1
 kind: ConfigMap
